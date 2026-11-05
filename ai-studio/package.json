@@ -1,0 +1,14 @@
+{
+  "name": "ai-studio",
+  "version": "1.0.0",
+  "scripts": {
+    "reboot-server": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,magenta\" \"cd backend && npx tsx src/server.ts\" \"cd frontend && npm run dev\"",
+    "reboot-backend": "cd backend && npx tsx src/server.ts",
+    "reboot-frontend": "cd frontend && npm run dev",
+    "kill": "taskkill /F /IM node.exe",
+    "clear": "taskkill /F /IM node.exe & del backend\\data.db & npm run reboot-server"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
